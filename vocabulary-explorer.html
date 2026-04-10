@@ -939,6 +939,76 @@
     showToast(on ? 'Expert Mode on' : 'Expert Mode off');
   }
 
+  // ===== wizard-of-oz control stubs =====
+  // These stubs let a facilitator trigger advanced states on demand.
+  window.WizardControls = {
+    goToPane(name, arg){
+      go(name, arg);
+    },
+    openWord(cree){
+      openWord(cree);
+    },
+    setSearchQuery(query, resultCount){
+      const input = document.getElementById('searchInput');
+      if(input) input.value = query;
+      const label = document.querySelector('.pane[data-pane="search"] .rellabel');
+      if(label && Number.isFinite(resultCount)){
+        label.textContent = `${resultCount} results for "${query}"`;
+      }
+    },
+    setMapSelection(cree, gloss){
+      const nodes = Array.from(document.querySelectorAll('.node.satellite'));
+      const match = nodes.find(n => {
+        const text = n.querySelector('text');
+        return text && text.textContent.trim() === cree;
+      });
+      if(match){
+        selectNode(match, cree, gloss || 'related word');
+      }
+    },
+    toggleExpert(on){
+      const toggle = document.getElementById('expertToggle');
+      if(!toggle) return;
+      const isOn = toggle.classList.contains('on');
+      if((on === true && !isOn) || (on === false && isOn)){
+        toggleExpert();
+      }
+    },
+    injectSavedWords(words){
+      if(Array.isArray(words)){
+        savedWords = words.filter(Boolean).map(w=>({
+          cree: w.cree || 'unknown',
+          gloss: w.gloss || '—',
+          tag: w.tag || 'color'
+        }));
+        renderMyWords();
+      }
+    },
+    simulateBookmark(cree, gloss, tag){
+      if(!savedWords.find(w=>w.cree===cree)){
+        savedWords.unshift({ cree, gloss: gloss || '—', tag: tag || 'color' });
+      }
+      showToast('Saved to My Words');
+      renderMyWords();
+    },
+    triggerToast(text){
+      showToast(text || 'Action completed');
+    },
+    playPronunciation(){
+      showToast('▶ Playing pronunciation');
+    },
+    resetDemoState(){
+      savedWords = [
+        {cree:'mihkwâw', gloss:'it is red', tag:'color'},
+        {cree:'pisiskîs', gloss:'small animal', tag:'animal'},
+      ];
+      this.toggleExpert(false);
+      go('home');
+      renderMyWords();
+      showToast('Prototype reset');
+    }
+  };
+
   // clock
   (function tick(){
     const d = new Date();
