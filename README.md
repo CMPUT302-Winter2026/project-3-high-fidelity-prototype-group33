@@ -7,13 +7,13 @@
 
 ## Team Memebers
 
-| Name               | CCID      | GitHub          |
-|--------------------|-----------|-----------------|
-| Rayan Zhi          | rzhi      | rayanzhi9       |
-| Garrick Tse        | gtse1     | garrrrrrrrrr    |
-| Tobi Adebowale     | tradebow  | Tobi3416        |
-| Eric Mo            | emo2      | cire005         |
-| Ali Zain Malik     | alizain   | IFDES           |
+| Name               | CCID      | GitHub           |
+|--------------------|-----------|------------------|
+| Rayan Zhi          | rzhi      | rayanzhi9/icetomb|
+| Garrick Tse        | gtse1     | garrrrrrrrrr     |
+| Tobi Adebowale     | tradebow  | Tobi3416         |
+| Eric Mo            | emo2      | cire005          |
+| Ali Zain Malik     | alizain   | IFDES            |
 
 ## Additional Information 
 The prototypeDescription is also located in the google drive at CMPUT302_Winter2026\Project3_IterativeDesignEval\TeamWork\Teams31-40\P3_Team33_alizain_rzhi_gtse1_emo2_tradebow\Prototype Description
