@@ -4,3 +4,13 @@
 ## To Run:
 
 ### Download the vocabulary-explorer.html and open with web browser of your choice.
+
+### Team Memebers
+
+| Name               | CCID      | GitHub          |
+|--------------------|-----------|-----------------|
+| Rayan Zhi          | rzhi      | rayanzhi9       |
+| Garrick Tse        | gtse1     | garrrrrrrrrr    |
+| Tobi Adebowale     | tradebow  | Tobi3416        |
+| Eric Mo            | emo2      | cire005         |
+| Ali Zain Malik     | alizain   | IFDES           |
